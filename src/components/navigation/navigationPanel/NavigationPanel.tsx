@@ -1,5 +1,5 @@
 // React
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 // Styles
 import './NavigationPanel.scss';
@@ -12,12 +12,33 @@ import {IconHelper} from '../../../middleware/iconHelper/IconHelper';
 
 // Interfaces
 import * as INTERFACES from './NavigationPanelInterfaces';
+import {Redirect} from "react-router-dom";
 
 export const NavigationPanel: React.FC = () => {
   // States
   const [open, setOpen] = useState<boolean>(false);
   const [active, setActive] = useState<number>(0);
   const [menuItems] = useState<INTERFACES.NavigationItem[]>(NavigationItems);
+  const [redirectParams, setRedirectParams] = useState<Record<string, unknown>>();
+
+  // Effects
+  useEffect(() => {
+    const selectedMenuItem = menuItems[active];
+
+    switch (selectedMenuItem.name) {
+      case 'Members':
+        setRedirectParams({
+          pathname: `/`
+        })
+        break;
+      case 'Sports':
+        setRedirectParams({
+          pathname: `/sports`
+        })
+        break;
+      default:
+    }
+  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <React.Fragment>
@@ -74,6 +95,11 @@ export const NavigationPanel: React.FC = () => {
           }
         </ul>
       </div>
+
+      {/*REDIRECT*/}
+      {redirectParams && Object.keys(redirectParams).length > 0 &&
+      <Redirect to={redirectParams}/>
+      }
     </React.Fragment>
   );
 };
