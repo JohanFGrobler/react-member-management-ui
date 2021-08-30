@@ -1,0 +1,57 @@
+// Breakpoints
+$breakpoints: (
+        'xs': 42em,
+        'sm': 60em,
+        'sd': 75em,
+        'md': 99em,
+        'mg': 120em,
+        'lg': 142em,
+        'xl': 192em,
+);
+
+// Background Colors
+$backgroundColors: (
+        'bg-7': #ffffff,
+        'bg-6': #e7e7e7,
+        'bg-5': #acacac,
+        'bg-4': #292929,
+        'bg-3': #242424,
+        'bg-2': #181818,
+        'bg-1': #000000,
+        'success': #349E1A,
+        'error': #ad1a1a,
+        'warning': #EB8D29,
+        'info': #1a7fad,
+);
+
+// Foreground Colors
+$foregroundColors: (
+        'fg-7': #ffffff,
+        'fg-6': #cacaca,
+        'fg-5': #696969,
+        'fg-4': #292929,
+        'fg-3': #242424,
+        'fg-2': #151515,
+        'fg-1': #000000,
+        'success': #349E1A,
+        'error': #ad1a1a,
+        'warning': #EB8D29,
+        'info': #1a7fad,
+);
+
+// zIndices
+$zIndices: (
+        'navigation': 1000,
+        'backdrop': 1025,
+);
+
+// HIDDEN
+.hidden {
+  @each $breakpoint, $width in $breakpoints {
+    &__#{$breakpoint} {
+      @media only screen and (max-width: $width) {
+        display: none;
+      }
+    }
+  }
+}

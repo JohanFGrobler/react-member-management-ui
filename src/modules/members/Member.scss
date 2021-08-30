@@ -1,0 +1,83 @@
+@use "../../styles/abstracts/Variables" as *;
+@use "../../styles/abstracts/Mixins" as *;
+
+#member {
+  padding: 2em;
+
+  .member {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: flex-start;
+
+    @media only screen and (max-width: map-get($breakpoints, 'md')) {
+      justify-content: space-evenly;
+    }
+  }
+
+  .header-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .member-image {
+    max-height: 30em;
+    height: 90vw;
+    max-width: 30em;
+    width: 90vw;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.5em;
+    margin: 0 auto;
+    box-shadow: 0 0 1em 0 rgba(17, 17, 17, 45%);
+  }
+
+  .icon {
+    &__back {
+      margin-right: 3em;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      svg {
+        fill: #111111;
+      }
+    }
+
+    &__sport {
+      svg {
+        fill: map-get($backgroundColors, 'info');
+      }
+    }
+  }
+
+  .title {
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .sport-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 3em;
+  }
+
+  .sport-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0.5em;
+    border: 1px solid #afafaf;
+    width: 12.5em;
+    height: 12.5em;
+    box-shadow: 0 0 1em 0 rgba(17, 17, 17, 25%);
+  }
+}
