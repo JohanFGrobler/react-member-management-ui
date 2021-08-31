@@ -175,6 +175,8 @@ export const Members: React.FC = () => {
   }
 
   const handleSportSelect = (value: string): void => {
+    if (!value || value === '') return
+
     let tempNewMember = newMember;
     let tempSports = newMember.sports;
 

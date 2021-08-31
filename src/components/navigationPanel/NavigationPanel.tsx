@@ -1,5 +1,5 @@
 // React
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 // Styles
 import './NavigationPanel.scss';
@@ -21,11 +21,9 @@ export const NavigationPanel: React.FC = () => {
   const [menuItems] = useState<INTERFACES.NavigationItem[]>(NavigationItems);
   const [redirectParams, setRedirectParams] = useState<Record<string, unknown>>();
 
-  // Effects
-  useEffect(() => {
-    const selectedMenuItem = menuItems[active];
-
-    switch (selectedMenuItem.name) {
+  // Handlers
+  const handleLinkClick = (name: string): void => {
+    switch (name) {
       case 'Members':
         setRedirectParams({
           pathname: `/`
@@ -38,7 +36,7 @@ export const NavigationPanel: React.FC = () => {
         break;
       default:
     }
-  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
+  }
 
   return (
     <React.Fragment>
@@ -63,7 +61,10 @@ export const NavigationPanel: React.FC = () => {
                     className={`navigation__item${index === active ? ' navigation--active navigation__item--active' : ''}`}
                     key={index}
                     tabIndex={index + 1}
-                    onClick={() => setActive(index)}
+                    onClick={() => {
+                      setActive(index)
+                      handleLinkClick(item.name)
+                    }}
                   >
                     {/*ICON*/}
                     <i className={'navigation__icon'}>

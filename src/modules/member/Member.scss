@@ -49,6 +49,21 @@
       }
     }
 
+    &__edit {
+      margin-right: 3em;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      svg {
+        fill: #7d7d7d;
+      }
+    }
+
     &__sport {
       svg {
         fill: map-get($backgroundColors, 'info');
@@ -80,4 +95,126 @@
     height: 12.5em;
     box-shadow: 0 0 1em 0 rgba(17, 17, 17, 25%);
   }
+
+  .button {
+    &__new-member {
+      background: none;
+      color: map-get($foregroundColors, 'info');
+      font-size: 1.75rem;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      outline: inherit;
+
+      &:hover {
+        transform: scale(1.025);
+      }
+    }
+
+    &__save {
+      border-radius: 0.25em;
+      height: 2em;
+      width: 5em;
+      background: map-get($backgroundColors, 'info');
+      color: #ffffff;
+      font-size: 1.75rem;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      outline: inherit;
+
+      &--disabled {
+        background: #636363;
+      }
+
+      &:hover {
+        transform: scale(1.025);
+      }
+    }
+
+    &__cancel {
+      height: 3em;
+      width: 5em;
+      background: none;
+      color: map-get($foregroundColors, 'info');
+      font-size: 1.75rem;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      outline: inherit;
+
+      &:hover {
+        transform: scale(1.025);
+      }
+    }
+  }
+
+  .modal {
+    &__backdrop {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: map-get($zIndices, 'backdrop');
+      width: 100%;
+      height: 100%;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2em;
+      background: #ffffff;
+      border-radius: 0.5em;
+      width: 100%;
+      max-width: 50em;
+    }
+  }
+
+  .field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 0;
+  }
+
+  .actions-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  .selected-sport {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25em 0;
+    margin: 0.1em 0;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .input {
+    margin-top: 0.5em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid #959595
+  }
+
+  .selected-sport-text {
+    font-size: 1.5rem;
+  }
+
+  .indicator {
+    color: map-get($foregroundColors, 'error')
+  }
+
 }
