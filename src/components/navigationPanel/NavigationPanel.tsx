@@ -8,7 +8,7 @@ import './NavigationPanel.scss';
 import {NavigationItems} from './NavigationItems';
 
 // Middleware
-import {IconHelper} from '../../../middleware/iconHelper/IconHelper';
+import {IconHelper} from '../../middleware/iconHelper/IconHelper';
 
 // Interfaces
 import * as INTERFACES from './NavigationPanelInterfaces';

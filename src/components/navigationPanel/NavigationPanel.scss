@@ -1,5 +1,5 @@
-@use "../../../styles/abstracts/Variables" as *;
-@use "../../../styles/abstracts/Mixins" as *;
+@use "../../styles/abstracts/Variables" as *;
+@use "../../styles/abstracts/Mixins" as *;
 
 #navigation--desktop {
   z-index: map-get($zIndices, 'navigation');

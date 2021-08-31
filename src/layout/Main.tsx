@@ -5,7 +5,7 @@ import React from 'react';
 import './Main.scss';
 
 // Components
-import {NavigationPanel} from '../components/navigation/navigationPanel/NavigationPanel';
+import {NavigationPanel} from '../components/navigationPanel/NavigationPanel';
 
 // Interfaces
 import * as INTERFACES from './MainInterfaces';
