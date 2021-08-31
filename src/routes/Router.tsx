@@ -7,7 +7,7 @@ import {createPath, ROUTES} from './RoutesBuilder';
 
 // Components
 import {Members} from '../modules/members/Members';
-import {Member} from '../modules/members/Member';
+import {Member} from '../modules/member/Member';
 import {Sports} from '../modules/sports/Sports';
 
 // Layouts

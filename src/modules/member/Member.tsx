@@ -10,7 +10,7 @@ import {Redirect} from "react-router-dom";
 import './Member.scss';
 
 // Interfaces
-import * as INTERFACES from "./MembersInterfaces";
+import * as INTERFACES from "../members/MembersInterfaces";
 
 export const Member: React.FC = () => {
   // Routes

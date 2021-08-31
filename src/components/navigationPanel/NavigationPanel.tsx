@@ -75,7 +75,6 @@ export const NavigationPanel: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
             </nav>
           </div>
         </div>
