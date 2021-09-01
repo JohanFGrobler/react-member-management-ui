@@ -86,7 +86,14 @@ export const NavigationPanel: React.FC = () => {
         <ul className={'menu'}>
           {
             menuItems.map((item, index) => (
-              <li className={'menu__item'} key={index} onClick={() => setActive(index)}>
+              <li
+                className={'menu__item'}
+                key={index}
+                onClick={() => {
+                  setActive(index)
+                  handleLinkClick(item.name)
+                }}
+              >
                 <i className={'menu__icon'}>
                   {IconHelper({testId: `menu-icon-${item.name}`, name: item.icon, size: 25})}
                 </i>
